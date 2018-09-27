@@ -281,8 +281,13 @@ void searchAlgo::display(){//[Prints solution to screen]
 
 void searchAlgo::stats(){//[Prints algorithm name, execution time and number of
 
-    cout<<path.size()<<","<<nodesExplored<<","<<time.count()<<","<<graphdata.getPathDistance(path)<<","<<graphdata.getPathCost(path)<<endl;
-    /* cout<<"Algorithm Name: "<<name<<endl;
+   /* cout<<path.size()<<","<<nodesExplored<<","<<time.count()<<","<<graphdata.getPathDistance(path)<<","<<graphdata.getPathCost(path)<<endl;
+
+        cout<<endl;*/
+
+
+
+     cout<<"Algorithm Name: "<<name<<endl;
     cout<<"Structure used: " <<structure<<endl;
     cout<<"Path: ";
     for(int i = 0; i<path.size();i++){
@@ -296,7 +301,7 @@ void searchAlgo::stats(){//[Prints algorithm name, execution time and number of
         cout<<"Path cost: "<<graphdata.getPathCost(path)<<endl;
     }
 
-    cout<<"Time executing: "<<time.count()<<endl<<endl;*/
+    cout<<"Time executing: "<<time.count()<<endl<<endl;
 
 }
 

@@ -33,17 +33,9 @@
 using namespace std;
 int main(int argc, const char * argv[]) {
 
-    test t;
-
-    cout<<"Nodes, Nodes Explored, time, Distance, cost"<<endl;
-    for(int i = 0; i<100; i++){
-       // cout<<"RUN:"<<i+1<<endl;
-        t.run();
-    }
-
 
    // vector<string> files;
-  /*  vector<string>algoNames;
+    vector<string>algoNames;
     vector<string>structures;
 
     organizer*c = new organizer ();
@@ -63,20 +55,13 @@ int main(int argc, const char * argv[]) {
         for(int j = 0; j<algoNames.size(); j++){
             search->selectStructure(structures[i]);
             search->select(algoNames[j]);
-            search->setSourceAndDest(1, 1);
+            search->setSourceAndDest(1, 2);
             search->execute();
             search->stats();
-            search->setSourceAndDest(1, 1);
-            search->execute();
-            search->stats();
-
         }
     }
 
-   int v1 = rand() % 16 + 1;
-   int v2 = rand() % 16 + 1;
-   cout<<v1<<endl;
-   cout<<v2<<endl;*/
+
 
     return 0;
 

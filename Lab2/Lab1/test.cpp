@@ -25,9 +25,9 @@ test::test()
 
 
 
-
-
 }
+
+
 
 void test:: run(){
 
@@ -52,8 +52,8 @@ void test:: run(){
 
     search->load();
 
-    int v1 = rand() % 16 + 1;
-    int v2 = rand() % 16 + 1;
+   //
+   //
 
 
 
@@ -62,33 +62,34 @@ void test:: run(){
     string m = "matrix";
 
 
+//////////////////
 
-        //for(int j = 0; j<algoNames.size(); j++){
-            search->selectStructure(m);
-            search->select(algoNames[4]);
-            //cout<<"Source to Destination"<<endl;
-            search->setSourceAndDest(v2, v1);
-            search->execute();
-            search->stats();
-            /*cout<<"Destination to Source"<<endl;
-            search->setSourceAndDest(v2, v1);
-            search->execute();
-            search->stats();*/
-      //  }
+    int v1 = rand() % 16 + 1;
+    int v2 = rand() % 16 + 1;
+        cout<<algoNames[0]<<endl;
 
 
-      /*  for(int j = 0; j<algoNames.size(); j++){
-            search->selectStructure(m);
-            search->select(algoNames[j]);
-            cout<<"Source to Destination"<<endl;
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[0]);
             search->setSourceAndDest(v1, v2);
             search->execute();
             search->stats();
-            cout<<"Destination to Source"<<endl;
+
+
+
+
+
+
+         /*
+
+            search->selectStructure(l);
+            search->select(algoNames[0]);
             search->setSourceAndDest(v2, v1);
             search->execute();
             search->stats();
-        }*/
 
 
 
@@ -96,6 +97,259 @@ void test:: run(){
 
 
 
+            search->selectStructure(m);
+            search->select(algoNames[0]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[0]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+    //////////////////////////////
+
+        cout<<algoNames[1]<<endl;
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[1]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[1]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[1]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[1]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+
+        ////////////////////
+cout<<algoNames[2]<<endl;
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[2]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[2]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[2]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[2]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+        /////////////////////////////
+
+cout<<algoNames[3]<<endl;
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[3]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[3]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[3]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[3]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+        /////////
+
+cout<<algoNames[4]<<endl;
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[4]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[4]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[4]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[4]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+        ////////////////////////
+
+cout<<algoNames[5]<<endl;
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[5]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(l);
+            search->select(algoNames[5]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[5]);
+            search->setSourceAndDest(v1, v2);
+            search->execute();
+            search->stats();
+
+
+
+
+
+
+            search->selectStructure(m);
+            search->select(algoNames[5]);
+            search->setSourceAndDest(v2, v1);
+            search->execute();
+            search->stats();
+
+   */
 
 
 
@@ -104,3 +358,15 @@ void test:: run(){
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

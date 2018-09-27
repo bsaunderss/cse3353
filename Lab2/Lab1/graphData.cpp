@@ -90,17 +90,7 @@ graphData::graphData(){
 
 int graphData::getDistance (int src, int dst){
     int distance;
-    int src_pos;
-    int dst_pos;
-    for(int i = 0; i<positions.size(); i++){
-        if(get<0>(positions[i])==src ){
-            src_pos =i;
-        }
-        if(get<0>(positions[i])==src ){
-            dst_pos =i;
-        }
-    }
-    distance = abs(get<1>(positions[src])-get<1>(positions[dst])) + abs(get<2>(positions[src])-get<2>(positions[dst])) + abs(get<3>(positions[src])-get<3>(positions[dst]));
+    distance = abs(get<1>(positions[src-1])-get<1>(positions[dst-1])) + abs(get<2>(positions[src-1])-get<2>(positions[dst-1])) + abs(get<3>(positions[src-1])-get<3>(positions[dst-1]));
 
     return distance;
 
@@ -130,24 +120,11 @@ int graphData::getPathCost(vector<int>p){
 
 int graphData::getCost (int src, int dst){
     int distance;
-    int src_pos;
-    int dst_pos;
-    for(int i = 0; i<positions.size(); i++){
-        if(get<0>(positions[i])==src ){
-            src_pos =i;
-        }
-        if(get<0>(positions[i])==src ){
-            dst_pos =i;
-        }
-    }
     int weight = getWeight(src, dst);
-    distance = abs(get<1>(positions[src])-get<1>(positions[dst])) + abs(get<2>(positions[src])-get<2>(positions[dst])) + abs(get<3>(positions[src])-get<3>(positions[dst]));
+    distance = abs(get<1>(positions[src-1])-get<1>(positions[dst-1])) + abs(get<2>(positions[src-1])-get<2>(positions[dst-1])) + abs(get<3>(positions[src-1])-get<3>(positions[dst-1]));
 
     distance = distance*(1+weight);
     return distance;
-
-
-
 }
 
 

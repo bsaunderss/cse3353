@@ -72,6 +72,7 @@ void bfsRecursive::search(graph & adjList, int src, int dst, int visiting){
         }
         reverse(path.begin(), path.end());
         nodesExplored = visited.size();
+        nodesExplored++;
 
         }
     }
