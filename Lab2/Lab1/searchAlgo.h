@@ -32,13 +32,17 @@ class searchAlgo: public algorithm {
     void select (string&);//[enum or int or id passed as input and loads corresponding algorithm to interface]
     void clearOutput(string);
     void setSourceAndDest(int, int);
+
    // private:
 
         string name;//algoName
         string structure;//list or matrix
         vector<int> path;//algorithm path
-        std::chrono::duration<double> time;//how quickly it executes
+
         int nodesExplored;
+
+        std::chrono::duration<double> time;//how quickly it executes
+
 
 
         std::vector<std::pair<int,int>> spots;

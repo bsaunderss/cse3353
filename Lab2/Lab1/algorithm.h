@@ -30,6 +30,7 @@
 #include <ctime>
 
 #include <ratio>
+#include <vector>
 
 
 using namespace std;
@@ -62,6 +63,7 @@ public:
     virtual void clearOutput(string)=0;
 
     virtual void setSourceAndDest(int, int)=0;
+
 
 private:
 

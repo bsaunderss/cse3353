@@ -31,38 +31,41 @@
 
 
 using namespace std;
-int main(int argc, const char * argv[]) {
+int main(int argc,char * argv[]) {
 
 
-   // vector<string> files;
-    vector<string>algoNames;
-    vector<string>structures;
 
-    organizer*c = new organizer ();
+        vector<string>algoNames;
+        vector<string>structures;
 
-    c->addAlgoNames(algoNames);
-    c->addStructures(structures);
+        organizer*c = new organizer ();
 
-    algorithm * search;
-    searchAlgo s;
-    search = &s;
+        c->addAlgoNames(algoNames);
+        c->addStructures(structures);
 
-    //to change the txt files, go to the load function in searchAlgo
+        algorithm * search;
+        searchAlgo s;
+        search = &s;
 
-    search->load();
 
-   for(int i = 0; i<structures.size(); i++){
-        for(int j = 0; j<algoNames.size(); j++){
-            search->selectStructure(structures[i]);
-            search->select(algoNames[j]);
-            search->setSourceAndDest(1, 2);
-            search->execute();
-            search->stats();
+        //to change the txt files, go to the load function in searchAlgo.cpp
+        //and also go to graphData.cpp
+
+       search->load();
+       for(int i = 0; i<structures.size(); i++){
+            for(int j = 0; j<algoNames.size(); j++){
+                search->selectStructure(structures[i]);
+                search->select(algoNames[j]);
+                //change these two numbers to set a new source and destination
+                search->setSourceAndDest(1,3);
+                search->execute();
+                search->stats();
+            }
         }
-    }
 
 
 
-    return 0;
+        return 0;
+
 
 }

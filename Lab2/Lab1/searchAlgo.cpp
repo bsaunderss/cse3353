@@ -43,8 +43,6 @@ void searchAlgo::load (){//[Takes a filename as and can read input data file]
 
     int one, two, three, four, count;
     string line;
-
-
     //reading the the graph
     in.open("graph.txt");
     if (!in) {
@@ -95,9 +93,6 @@ void searchAlgo::setSourceAndDest(int s, int f){
         start = num;
     }
 
-
-
-
     if(graphdata.isNode(f) == true){
         finish = f;
     }
@@ -113,9 +108,6 @@ void searchAlgo::setSourceAndDest(int s, int f){
     }
 
 
-
-
-
 }
 
 
@@ -125,14 +117,6 @@ void searchAlgo::execute (){//[Executes the search algorithm]
 
     graph* list = &l;
     graph* matrix = &m;
-
-   /* int source;
-    cout<<"enter source: ";
-    cin>>source;
-
-    int dest;
-    cout<<"enter destination: ";
-    cin>>dest;*/
 
 
     int s=start;
@@ -281,12 +265,6 @@ void searchAlgo::display(){//[Prints solution to screen]
 
 void searchAlgo::stats(){//[Prints algorithm name, execution time and number of
 
-   /* cout<<path.size()<<","<<nodesExplored<<","<<time.count()<<","<<graphdata.getPathDistance(path)<<","<<graphdata.getPathCost(path)<<endl;
-
-        cout<<endl;*/
-
-
-
      cout<<"Algorithm Name: "<<name<<endl;
     cout<<"Structure used: " <<structure<<endl;
     cout<<"Path: ";
@@ -294,21 +272,37 @@ void searchAlgo::stats(){//[Prints algorithm name, execution time and number of
         cout<<path[i]<<" ";
     }
     cout<<endl;
+     cout<<"Number of Nodes in path: "<<path.size()<<endl;
     cout<<"Number of Nodes explored: "<<nodesExplored<<endl;
-    cout<<"Number of Nodes in path: "<<path.size()<<endl;
+   cout<<"Time executing: "<<time.count()<<endl;
     if(path.size()>0){
         cout<<"Path Distance: "<<graphdata.getPathDistance(path)<<endl;
-        cout<<"Path cost: "<<graphdata.getPathCost(path)<<endl;
+        cout<<"Path cost: "<<graphdata.getPathCost(path)<<endl<<endl;
     }
 
-    cout<<"Time executing: "<<time.count()<<endl<<endl;
+
 
 }
 
 
 
 void searchAlgo::save (string file){//[Saves solution to file path given as input]
+    ofstream fileout;
+    fileout.open(file, fstream::app);
+    if(!fileout){
+        cout<<"Unable to open file"<<endl;
+    }
+    fileout<<"Alorithm Name: "<<name<<endl;
+    fileout<<"Number of Nodes in path: "<<path.size()<<endl;
+    fileout<<"Number of Nodes explored: "<<nodesExplored<<endl;
+    fileout<<"Time executing: "<<time.count()<<endl;
+    if(path.size()>0){
+        fileout<<"Path Distance: "<<graphdata.getPathDistance(path)<<endl;
+        fileout<<"Path cost: "<<graphdata.getPathCost(path)<<endl<<endl;
+    }
 
+    fileout<<endl;
+    fileout.close();
 }
 
 void searchAlgo::configure (){
@@ -318,6 +312,8 @@ void searchAlgo::configure (){
 void searchAlgo::clearOutput (string file){
 
 }
+
+
 
 
 
