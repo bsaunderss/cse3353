@@ -1,5 +1,5 @@
 //
-//  merge.hpp
+//  merge.h
 //  Lab1
 //
 //  Created by Blair Saunders on 9/3/18.

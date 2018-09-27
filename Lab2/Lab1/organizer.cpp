@@ -32,11 +32,24 @@ void organizer::addFilePaths (vector<string>& paths){
 
 //choosing the algorithms used
 void organizer::addAlgoNames (vector<string>& names){
-    string b = "bubble";
-    string m = "merge";
-    string i = "insertion";
-    names.push_back(b);
-    names.push_back(m);
-    names.push_back(i);
+
+    string dfsR = "dfs recursive";
+    string dfsI = "dfs iterative";
+    string bfsR = "bfs recursive";
+    string bfsI = "bfs iterative";
+    string aStar = "a star";
+    string dij = "dijkstra";
+
+    names.push_back(dfsR);
+    names.push_back(dfsI);
+    names.push_back(bfsR);
+    names.push_back(bfsI);
+    names.push_back(aStar);
+    names.push_back(dij);
+}
+
+void organizer::addStructures (vector<string>& structures){
+    structures.push_back("list");
+    structures.push_back("matrix");
 }
 

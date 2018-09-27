@@ -1,5 +1,5 @@
 //
-//  bubble.hpp
+//  bubble.h
 //  Lab1
 //
 //  Created by Blair Saunders on 8/26/18.

@@ -12,39 +12,71 @@
 #include "algorithm.h"
 #include "organizer.h"
 #include <vector>
-
-
+#include "graph.h"
+#include <fstream>
+#include <sstream>
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
+#include "dfsIterative.h"
+#include "dfsRecursive.h"
+#include "adjacencyMatrix.h"
+#include "bfsIterative.h"
+#include "dijkstra.h"
+#include "astar.h"
+#include "bfsRecursive.h"
+#include "graphData.h"
+#include "test.h"
+
 
 
 using namespace std;
 int main(int argc, const char * argv[]) {
 
-    vector<string> files;
-    vector<string>algoNames;
+    test t;
 
-    //to control the input files that are being sorted and the sort methods being used, you go to the class 'organizer' and control it from there
-    //right now the data sets with 10 values are being checked and each of the sort methods is being used. You can change this though
+    cout<<"Nodes, Nodes Explored, time, Distance, cost"<<endl;
+    for(int i = 0; i<100; i++){
+       // cout<<"RUN:"<<i+1<<endl;
+        t.run();
+    }
+
+
+   // vector<string> files;
+  /*  vector<string>algoNames;
+    vector<string>structures;
 
     organizer*c = new organizer ();
-    c->addFilePaths(files);
+
     c->addAlgoNames(algoNames);
+    c->addStructures(structures);
 
-    algorithm * sort = nullptr;
-    sort = new sortAlgo();
-    sort->clearOutput("output_file.txt");//making sure the output file is emtpy
+    algorithm * search;
+    searchAlgo s;
+    search = &s;
 
-    for(int i = 0; i<files.size(); i++){
-        for (int j = 0; j<algoNames.size(); j++){
-            sort->select(algoNames[j]);
-            sort->load(files[i]);
-            sort->execute();
-            sort->stats();
-            sort->save("output_file.txt");
+    //to change the txt files, go to the load function in searchAlgo
+
+    search->load();
+
+   for(int i = 0; i<structures.size(); i++){
+        for(int j = 0; j<algoNames.size(); j++){
+            search->selectStructure(structures[i]);
+            search->select(algoNames[j]);
+            search->setSourceAndDest(1, 1);
+            search->execute();
+            search->stats();
+            search->setSourceAndDest(1, 1);
+            search->execute();
+            search->stats();
+
         }
     }
+
+   int v1 = rand() % 16 + 1;
+   int v2 = rand() % 16 + 1;
+   cout<<v1<<endl;
+   cout<<v2<<endl;*/
 
     return 0;
 

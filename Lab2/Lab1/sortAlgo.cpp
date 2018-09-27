@@ -121,3 +121,13 @@ void sortAlgo::configure (){
 
 }
 
+void sortAlgo::load (){
+
+}
+
+void sortAlgo::selectStructure (string&s){
+
+}
+
+
+

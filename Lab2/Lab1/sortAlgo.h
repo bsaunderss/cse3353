@@ -1,5 +1,5 @@
 //
-//  sort.hpp
+//  sort.h
 //  Lab1
 //
 //  Created by Blair Saunders on 8/26/18.
@@ -18,6 +18,7 @@
 
 using namespace std;
 class sortAlgo: public algorithm {
+    void load();
     void load (string); //[Takes a filename as and can read input data file]
     void execute (); //[Executes the algorithm]
     void display(); //[Prints solution to screen]
@@ -26,6 +27,8 @@ class sortAlgo: public algorithm {
     void configure ();// [Future expandability ]
     void select (string&);//[enum or int or id passed as input and loads corresponding algorithm to interface]
     void clearOutput(string);
+    void selectStructure(string&);
+
 private:
     string name;//algoName
     std::chrono::duration<double> time;//how quickly it executes

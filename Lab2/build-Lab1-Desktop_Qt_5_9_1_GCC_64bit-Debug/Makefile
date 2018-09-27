@@ -55,13 +55,35 @@ SOURCES       = ../Lab1/main.cpp \
 		../Lab1/insertion.cpp \
 		../Lab1/organizer.cpp \
 		../Lab1/Merge.cpp \
-		../Lab1/sortAlgo.cpp 
+		../Lab1/sortAlgo.cpp \
+		../Lab1/searchAlgo.cpp \
+		../Lab1/graphData.cpp \
+		../Lab1/dijkstra.cpp \
+		../Lab1/dfsRecursive.cpp \
+		../Lab1/dfsIterative.cpp \
+		../Lab1/bfsRecursive.cpp \
+		../Lab1/bfsIterative.cpp \
+		../Lab1/astar.cpp \
+		../Lab1/adjacencyMatrix.cpp \
+		../Lab1/adjacencyList.cpp \
+		../Lab1/test.cpp 
 OBJECTS       = main.o \
 		bubble.o \
 		insertion.o \
 		organizer.o \
 		Merge.o \
-		sortAlgo.o
+		sortAlgo.o \
+		searchAlgo.o \
+		graphData.o \
+		dijkstra.o \
+		dfsRecursive.o \
+		dfsIterative.o \
+		bfsRecursive.o \
+		bfsIterative.o \
+		astar.o \
+		adjacencyMatrix.o \
+		adjacencyList.o \
+		test.o
 DIST          = ../../Desktop/CSE \
 		../Lab1/3353 \
 		../Lab1/data/cse \
@@ -108,6 +130,8 @@ DIST          = ../../Desktop/CSE \
 		../Lab1/100000 \
 		../Lab1/raw \
 		../Lab1/table.xlsx \
+		../../Desktop/positions.txt \
+		../../Desktop/weights.txt \
 		../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.9.1/gcc_64/mkspecs/common/unix.conf \
 		../../Qt/5.9.1/gcc_64/mkspecs/common/linux.conf \
@@ -286,12 +310,35 @@ DIST          = ../../Desktop/CSE \
 		organizer.h \
 		algorithm.h \
 		Merge.h \
-		sortAlgo.h ../Lab1/main.cpp \
+		sortAlgo.h \
+		searchAlgo.h \
+		graphData.h \
+		graph.h \
+		dijkstra.h \
+		dfsRecursive.h \
+		dfsIterative.h \
+		bfsRecursive.h \
+		bfsIterative.h \
+		astar.h \
+		adjacencyMatrix.h \
+		adjacencyList.h \
+		test.h ../Lab1/main.cpp \
 		../Lab1/bubble.cpp \
 		../Lab1/insertion.cpp \
 		../Lab1/organizer.cpp \
 		../Lab1/Merge.cpp \
-		../Lab1/sortAlgo.cpp
+		../Lab1/sortAlgo.cpp \
+		../Lab1/searchAlgo.cpp \
+		../Lab1/graphData.cpp \
+		../Lab1/dijkstra.cpp \
+		../Lab1/dfsRecursive.cpp \
+		../Lab1/dfsIterative.cpp \
+		../Lab1/bfsRecursive.cpp \
+		../Lab1/bfsIterative.cpp \
+		../Lab1/astar.cpp \
+		../Lab1/adjacencyMatrix.cpp \
+		../Lab1/adjacencyList.cpp \
+		../Lab1/test.cpp
 QMAKE_TARGET  = Lab1
 DESTDIR       = 
 TARGET        = Lab1
@@ -700,7 +747,18 @@ main.o: ../Lab1/main.cpp ../Lab1/bubble.h \
 		../Lab1/organizer.h \
 		../Lab1/sortAlgo.h \
 		../Lab1/Merge.h \
-		../Lab1/insertion.h
+		../Lab1/insertion.h \
+		../Lab1/searchAlgo.h \
+		../Lab1/dfsIterative.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h \
+		../Lab1/dfsRecursive.h \
+		../Lab1/bfsIterative.h \
+		../Lab1/dijkstra.h \
+		../Lab1/graphData.h \
+		../Lab1/astar.h \
+		../Lab1/bfsRecursive.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Lab1/main.cpp
 
 bubble.o: ../Lab1/bubble.cpp ../Lab1/bubble.h
@@ -714,7 +772,18 @@ organizer.o: ../Lab1/organizer.cpp ../Lab1/organizer.h \
 		../Lab1/sortAlgo.h \
 		../Lab1/bubble.h \
 		../Lab1/Merge.h \
-		../Lab1/insertion.h
+		../Lab1/insertion.h \
+		../Lab1/searchAlgo.h \
+		../Lab1/dfsIterative.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h \
+		../Lab1/dfsRecursive.h \
+		../Lab1/bfsIterative.h \
+		../Lab1/dijkstra.h \
+		../Lab1/graphData.h \
+		../Lab1/astar.h \
+		../Lab1/bfsRecursive.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o organizer.o ../Lab1/organizer.cpp
 
 Merge.o: ../Lab1/Merge.cpp ../Lab1/Merge.h
@@ -726,6 +795,93 @@ sortAlgo.o: ../Lab1/sortAlgo.cpp ../Lab1/sortAlgo.h \
 		../Lab1/Merge.h \
 		../Lab1/insertion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sortAlgo.o ../Lab1/sortAlgo.cpp
+
+searchAlgo.o: ../Lab1/searchAlgo.cpp ../Lab1/searchAlgo.h \
+		../Lab1/algorithm.h \
+		../Lab1/dfsIterative.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h \
+		../Lab1/dfsRecursive.h \
+		../Lab1/bfsIterative.h \
+		../Lab1/dijkstra.h \
+		../Lab1/graphData.h \
+		../Lab1/astar.h \
+		../Lab1/bfsRecursive.h \
+		../Lab1/sortAlgo.h \
+		../Lab1/bubble.h \
+		../Lab1/Merge.h \
+		../Lab1/insertion.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o searchAlgo.o ../Lab1/searchAlgo.cpp
+
+graphData.o: ../Lab1/graphData.cpp ../Lab1/graphData.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o graphData.o ../Lab1/graphData.cpp
+
+dijkstra.o: ../Lab1/dijkstra.cpp ../Lab1/dijkstra.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h \
+		../Lab1/graphData.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dijkstra.o ../Lab1/dijkstra.cpp
+
+dfsRecursive.o: ../Lab1/dfsRecursive.cpp ../Lab1/dfsRecursive.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dfsRecursive.o ../Lab1/dfsRecursive.cpp
+
+dfsIterative.o: ../Lab1/dfsIterative.cpp ../Lab1/dfsIterative.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dfsIterative.o ../Lab1/dfsIterative.cpp
+
+bfsRecursive.o: ../Lab1/bfsRecursive.cpp ../Lab1/bfsRecursive.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bfsRecursive.o ../Lab1/bfsRecursive.cpp
+
+bfsIterative.o: ../Lab1/bfsIterative.cpp ../Lab1/bfsIterative.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bfsIterative.o ../Lab1/bfsIterative.cpp
+
+astar.o: ../Lab1/astar.cpp ../Lab1/astar.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h \
+		../Lab1/graphData.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o astar.o ../Lab1/astar.cpp
+
+adjacencyMatrix.o: ../Lab1/adjacencyMatrix.cpp ../Lab1/adjacencyMatrix.h \
+		../Lab1/graph.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o adjacencyMatrix.o ../Lab1/adjacencyMatrix.cpp
+
+adjacencyList.o: ../Lab1/adjacencyList.cpp ../Lab1/adjacencyList.h \
+		../Lab1/graph.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o adjacencyList.o ../Lab1/adjacencyList.cpp
+
+test.o: ../Lab1/test.cpp ../Lab1/test.h \
+		../Lab1/bubble.h \
+		../Lab1/algorithm.h \
+		../Lab1/organizer.h \
+		../Lab1/sortAlgo.h \
+		../Lab1/Merge.h \
+		../Lab1/insertion.h \
+		../Lab1/searchAlgo.h \
+		../Lab1/dfsIterative.h \
+		../Lab1/adjacencyList.h \
+		../Lab1/graph.h \
+		../Lab1/adjacencyMatrix.h \
+		../Lab1/dfsRecursive.h \
+		../Lab1/bfsIterative.h \
+		../Lab1/dijkstra.h \
+		../Lab1/graphData.h \
+		../Lab1/astar.h \
+		../Lab1/bfsRecursive.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o test.o ../Lab1/test.cpp
 
 ####### Install
 

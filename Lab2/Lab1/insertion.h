@@ -1,5 +1,5 @@
 //
-//  insertion.hpp
+//  insertion.h
 //  Lab1
 //
 //  Created by Blair Saunders on 9/6/18.
