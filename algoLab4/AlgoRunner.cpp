@@ -18,10 +18,12 @@ void AlgoRunner:: go(){
     readInPositions(*g);
     g->createGraph();
     
+  
+    //run all the algorithms
     dynamic(*g);
-    //brute(*g);
-   geneticAlgo(*g);
-   // tabuAlgo(*g);
+    brute(*g);
+    tabuAlgo(*g);
+    geneticAlgo(*g);
 }
 
 
@@ -45,26 +47,83 @@ void AlgoRunner:: readInPositions(Graph & g){
                 one = stoi(number);
             }
             else if (count == 2){
-                //two = stoi(number);
                 two = stof(number);
             }
             
             else if (count == 3){
-                //three = stoi(number);
                 three = stof(number);
             }
             else{
-                //four = stoi(number);
                 four = stof(number);
             }
             count++;
         }
         g.addToPositions(one, two, three, four);
-    //    g.addToNodes(one);
+
 
     }
     in.close();
-   // g.addToNodes(1);
+    
+ 
+}
+
+
+void AlgoRunner:: testing(){
+    
+    int i =7;//node count
+    int loops =15;
+    vector<vector<double>> timesAv;
+        for(int j = 0; j<loops; j++){
+            cout<<"New Graph"<<endl;
+            Graph *g = new Graph();
+            vector<double> times;
+            for(int k = 1; k<=i; k++){
+                
+                float x = (rand() / (float)RAND_MAX * 19) + 1;
+                float y = (rand() / (float)RAND_MAX * 19) + 1;
+                float z = (rand() / (float)RAND_MAX * 19) + 1;
+                 g->addToPositions(k, x, y, z);
+            }
+             g->createGraph();
+           
+            
+            dynamic(*g);
+            times.push_back(time.count());
+            times.push_back(time.count());
+            
+          
+            
+            tabuAlgo(*g);
+            times.push_back(time.count());
+            times.push_back(time.count());
+            
+            timesAv.push_back(times);
+            
+            
+            
+            
+        }
+    vector<double>averageTimes;
+    for(int i = 0; i<4; i++){
+        double average=0;
+        for(int j= 0; j<loops; j++){
+            average += timesAv[j][i];
+        }
+        average = average/loops;
+        averageTimes.push_back(average);
+        
+    }
+        
+        
+    for(int i = 0; i<averageTimes.size(); i++){
+        
+        cout<<averageTimes[i]<<endl;
+    }
+    
+    
+    
+    
+    
 }
 
 

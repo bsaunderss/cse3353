@@ -21,6 +21,7 @@ class AlgoRunner{
 public:
     AlgoRunner();
     void go();
+    void testing();
 private:
     void readInPositions(Graph &);
     TSP * trav;
@@ -28,6 +29,8 @@ private:
     void brute(Graph &);
     void geneticAlgo(Graph &);
     void tabuAlgo(Graph &);
+    //void testing();
+    
     int smallestPathSize;
     std::chrono::duration<double> time;//how quickly it executes
 };

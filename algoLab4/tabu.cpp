@@ -7,15 +7,17 @@ int tabu::run(Graph & g){
     cout<<"~~Tabu TSP~~"<<endl;
     counter = 0;
     createInitial(g);
-    oneNeighorSwaps(g);
-    twoNeighorSwaps(g);
+    
+    for(int i = 0; i<100; i++){
+        twoNeighorSwaps(g);
+        oneNeighorSwaps(g);
+    }
     for(int i = 0; i<path.size(); i++){
         cout<<path[i]<<" ";
         
     }
     cout<<endl;
    int pathSize =g.getPathDistance(path);
-
     cout<<"path size: "<<pathSize<<endl;
     return pathSize;
 
@@ -90,9 +92,11 @@ void tabu::twoNeighorSwaps(Graph & g){
 }
 
 
+
+
 bool tabu::checkList(vector<int>solVec){
     bool recent = false;
-    if(tabuList.size()<5){
+    if(tabuList.size()<20){
         for(int i = 0; i<tabuList.size(); i++){
             if(tabuList[i] == solVec ){
                 recent = true;
@@ -102,7 +106,7 @@ bool tabu::checkList(vector<int>solVec){
     }
     
     else{
-        int start = tabuList.size()-5;
+        int start = tabuList.size()-20;
         for(int i = start; i<tabuList.size(); i++){
             if(tabuList[i] == solVec ){
                 recent = true;

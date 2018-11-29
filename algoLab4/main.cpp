@@ -5,7 +5,8 @@
 int main() {
    
     AlgoRunner *ar = new AlgoRunner();
-    ar->go();
+   ar->go();
+   //ar->testing();
     
     return 0;
 }

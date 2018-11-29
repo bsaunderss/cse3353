@@ -47,6 +47,7 @@ float Graph::getDistance (int src, int dst){
 
 float Graph::getPathDistance(vector<int>p){
     int distanceTotal=0;
+    //float distanceTotal = 0;
     for(int i = 0; i<p.size()-1; i++){
         distanceTotal += getDistance(p[i], p[i+1]);
     }
