@@ -29,6 +29,7 @@ private:
     int loop;
     void offspring (int, int, Graph &);
     void mutate(Graph & );
+    bool check(vector<int>);
 };
 
 #endif /* genetic_hpp */

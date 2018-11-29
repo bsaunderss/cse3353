@@ -8,15 +8,15 @@
 
 
 //selection
-    //1 //tested doing it in pairs
-                //first two
-                //second two
-                //third two
-    //2
-        //tested doing it completely random each time
+//1 //tested doing it in pairs
+//first two
+//second two
+//third two
+//2
+//tested doing it completely random each time
 //mutation
-    //tested a mutation method of swapping two cities in a path
-    //tested
+//tested a mutation method of swapping two cities in a path
+//tested
 
 //crossover
 
@@ -50,15 +50,15 @@ int genetic::run(Graph & g){
     sort(randomRoutes.begin(), randomRoutes.end());
     loop = 0;
     return tsp(g);
- 
+    
     
     
 }
 
 int genetic:: tsp (Graph & g){
     int pSize = randomRoutes[0].first;
-     int c = 0;
-    
+    int c = 0;
+    int mult = 35;
     int stop = randomRoutes.size();
     while(pSize>goal){
         int one;
@@ -66,27 +66,24 @@ int genetic:: tsp (Graph & g){
         if(randomRoutes.size()%2 != 0){
             size--;
         }
-    
+        
         int two = rand() % randomRoutes.size();
         for(int i = 0; i<10; i++){
             one = rand() % randomRoutes.size();
             offspring(i,one,g);
         }
         
-      
         
-        
-        int guess1 = rand() % 5;
-        int guess2 = rand() % 5;
-        
-        if(guess1 == guess2){
+        //woooooah
+        for(int i = 0; i<100; i++){
             mutate(g);
         }
         
         sort(randomRoutes.begin(), randomRoutes.end());
         pSize = randomRoutes[0].first;
         c++;
-    
+        
+      
     }
     
     
@@ -109,10 +106,10 @@ void genetic::offspring(int one, int two, Graph & g){
     
     vector<int>child(nodeCount+1);
     
- //tested it at the half way point
-//tested at the 75% point
+    //tested it at the half way point
+    //tested at the 75% point
     int spot = rand() % nodeCount;
-
+    
     
     for(int i = spot; i<parent1.size(); i++){
         child[i]=parent1[i];
@@ -135,7 +132,7 @@ void genetic::offspring(int one, int two, Graph & g){
     pair<int, vector<int>> sizeAndPath (childSize, child);
     randomRoutes.push_back(sizeAndPath);
     
-
+    
 }
 
 
@@ -152,10 +149,8 @@ bool genetic::alreadyIn (vector<int> child, int n){
 
 
 void genetic:: mutate(Graph & g){
-    int index = rand() % randomRoutes.size();
-  //  offspring(0,index,g);
-    
-    //int index = rand() % 3;
+    int i = randomRoutes.size()-1;
+    int index = rand() % i+1;
     int bleh = nodeCount -1;
     int spot1 = rand() % bleh+1;
     int spot2 = rand() % bleh+1;
