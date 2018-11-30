@@ -9,6 +9,7 @@ using namespace std;
 class Graph{
 public:
     Graph();
+    void createGraph(vector<tuple<int, float, float, float>>&);
     void createGraph();
     void addToPositions (int, float, float, float);
     float getDistance (int, int);

@@ -1,10 +1,3 @@
-//
-//  tabu.hpp
-//  algoLab3
-//
-//  Created by Blair Saunders on 11/8/18.
-//  Copyright © 2018 Blair Saunders. All rights reserved.
-//
 
 #include "dp.hpp"
 #include <stdio.h>

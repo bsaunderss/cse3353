@@ -12,6 +12,7 @@ int tabu::run(Graph & g){
         twoNeighorSwaps(g);
         oneNeighorSwaps(g);
     }
+    cout<<"path: ";
     for(int i = 0; i<path.size(); i++){
         cout<<path[i]<<" ";
         

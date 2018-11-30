@@ -10,6 +10,7 @@ class TSP
 {
 public:
     virtual int run(Graph &) = 0; // Abstract class because of this pure virtual function
+    
 };
 
 #endif /* TSP_hpp */

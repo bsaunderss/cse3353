@@ -5,6 +5,12 @@ using namespace std;
 Graph::Graph(){ }
 
 
+
+void Graph::createGraph(vector<tuple<int, float, float, float>>& p){
+    for(int i = 0; i<p.size(); i++){
+        positions.push_back(p[i]);
+    }
+}
 void Graph:: createGraph(){
     size = positions.size();
   

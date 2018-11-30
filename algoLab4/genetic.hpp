@@ -20,7 +20,6 @@ private:
     vector<vector<float>> setUp(int, vector<vector<float>>&);
     vector<pair<int, vector<int>>> randomRoutes;
     vector<pair<int, vector<int>>> childRoutes;
-    int myrandom (int);
     bool alreadyIn (vector<int>, int);
     int tsp (Graph &);
     int goal;

@@ -1,24 +1,4 @@
-//
-//  genetic.cpp
-//  algoLab3
-//
-//  Created by Blair Saunders on 11/27/18.
-//  Copyright © 2018 Blair Saunders. All rights reserved.
-//
 
-
-//selection
-//1 //tested doing it in pairs
-//first two
-//second two
-//third two
-//2
-//tested doing it completely random each time
-//mutation
-//tested a mutation method of swapping two cities in a path
-//tested
-
-//crossover
 
 
 //http://www.cplusplus.com/reference/algorithm/random_shuffle/
@@ -60,6 +40,7 @@ int genetic:: tsp (Graph & g){
     int c = 0;
     int mult = 35;
     int stop = randomRoutes.size();
+    goal = g.smallest;
     while(pSize>goal){
         int one;
         int size = randomRoutes.size();
@@ -83,7 +64,7 @@ int genetic:: tsp (Graph & g){
         pSize = randomRoutes[0].first;
         c++;
         
-      
+        
     }
     
     
